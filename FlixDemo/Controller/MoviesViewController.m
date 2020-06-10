@@ -78,14 +78,12 @@
 
 
     UIAlertAction* okButton = [UIAlertAction
-                                actionWithTitle:@"Try Again"
-                                style:UIAlertActionStyleDefault
-                                handler:^(UIAlertAction * action) {
-                                        UIApplication *application = [UIApplication sharedApplication];
-                                    NSURL *URL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-                                    [application openURL:URL options:@{} completionHandler:nil];
+                               actionWithTitle:@"Try Again"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * _Nonnull action) {
+        [self fetchMovies];
         
-                                }];
+    }];
 
     [alert addAction:okButton];
 

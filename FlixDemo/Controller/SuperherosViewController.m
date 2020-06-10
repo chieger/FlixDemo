@@ -80,12 +80,12 @@
 
 
     UIAlertAction* okButton = [UIAlertAction
-                                actionWithTitle:@"Try Again"
-                                style:UIAlertActionStyleDefault
-                                handler:^(UIAlertAction * _Nonnull action) {
+                               actionWithTitle:@"Try Again"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * _Nonnull action) {
         [self fetchMovies];
         
-                                }];
+    }];
 
     [alert addAction:okButton];
 
