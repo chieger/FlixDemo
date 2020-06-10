@@ -194,11 +194,23 @@
                                                 <rect key="frame" x="3" y="3" width="156" height="228"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsZ-zU-q7u">
+                                                <rect key="frame" x="0.0" y="0.0" width="146" height="224"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <segue destination="OtR-Mg-WmG" kind="presentation" identifier="PresentVideo" id="PFD-GB-cHv"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstItem="hsZ-zU-q7u" firstAttribute="leading" secondItem="SGW-J1-cgu" secondAttribute="leading" id="1xg-NO-XeJ"/>
                                             <constraint firstAttribute="width" constant="162" id="Crr-vS-kLI"/>
+                                            <constraint firstItem="hsZ-zU-q7u" firstAttribute="top" secondItem="SGW-J1-cgu" secondAttribute="top" id="FIZ-Mu-eW1"/>
                                             <constraint firstAttribute="height" constant="234" id="TeT-s8-YaO"/>
+                                            <constraint firstAttribute="bottom" secondItem="hsZ-zU-q7u" secondAttribute="bottom" constant="10" id="Xe8-WQ-JRF"/>
+                                            <constraint firstAttribute="trailing" secondItem="hsZ-zU-q7u" secondAttribute="trailing" constant="16" id="ea4-ib-VfS"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -320,6 +332,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wQ-LK-J7B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-120.28985507246378" y="138.61607142857142"/>
+        </scene>
+        <!--Movie Trailer View Controller-->
+        <scene sceneID="pL0-kx-Brd">
+            <objects>
+                <viewController id="OtR-Mg-WmG" customClass="MovieTrailerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jPS-Za-UJu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6et-37-SqP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6et-37-SqP" firstAttribute="trailing" secondItem="0wd-9R-cI0" secondAttribute="trailing" id="Zdl-2e-VJa"/>
+                            <constraint firstAttribute="bottom" secondItem="6et-37-SqP" secondAttribute="bottom" id="jX1-tm-Xzy"/>
+                            <constraint firstItem="6et-37-SqP" firstAttribute="leading" secondItem="0wd-9R-cI0" secondAttribute="leading" id="sGm-14-FJY"/>
+                            <constraint firstItem="6et-37-SqP" firstAttribute="top" secondItem="0wd-9R-cI0" secondAttribute="top" id="taU-Hq-SfL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0wd-9R-cI0"/>
+                    </view>
+                    <connections>
+                        <outlet property="movieWebView" destination="6et-37-SqP" id="YLD-th-bWv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vwC-1n-j92" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="679.71014492753625" y="247.76785714285714"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="p9K-FC-iLt">

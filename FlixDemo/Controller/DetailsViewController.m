@@ -8,6 +8,7 @@
 
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "MovieTrailerViewController.h"
 
 
 @interface DetailsViewController ()
@@ -47,14 +48,14 @@
 
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {    
+    NSString *movieID = self.movie[@"id"];
+    
+    NSString *fullPath = [NSString stringWithFormat: @"https://api.themoviedb.org/3/movie/%@/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed", movieID];
+        
+    MovieTrailerViewController * movieTrailerController = [segue destinationViewController];
+    movieTrailerController.movieURL = fullPath;
 }
-*/
 
 @end
