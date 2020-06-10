@@ -112,12 +112,29 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="uXU-SJ-5dj">
+                                <rect key="frame" x="0.0" y="429" width="414" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="uXU-SJ-5dj"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="uXU-SJ-5dj"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="FLIX" id="WJF-MT-Zpw"/>
                     <connections>
+                        <outlet property="activityLoader" destination="uXU-SJ-5dj" id="BXf-PW-r5N"/>
                         <outlet property="moviesTableView" destination="zGC-hx-hnR" id="70K-aM-Z9X"/>
                     </connections>
                 </viewController>
