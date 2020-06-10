@@ -41,6 +41,13 @@
         });
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+    
+    [self.moviesTableView deselectRowAtIndexPath:[self.moviesTableView indexPathForSelectedRow] animated:animated];
+
+}
+
 - (void)fetchMovies {
         NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"];
         NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
@@ -58,11 +65,7 @@
                    for (NSDictionary *movie in self.movies) {
                        NSLog(@"MOVIE MOVIE %@", movie[@"title"]);
                    }
-                   // TODO: Get the array of movies
-                   // TODO: Store the movies in a property to use elsewhere
-                   // TODO: Reload your table view data
                    [self.moviesTableView reloadData];
-
                }
             [self.refreshControl endRefreshing];
             [self.activityLoader stopAnimating];

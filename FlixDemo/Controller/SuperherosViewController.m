@@ -12,7 +12,7 @@
 #import "DetailsViewController.h"
 
 
-@interface SuperherosViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate>
+@interface SuperherosViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate, UIViewControllerTransitioningDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityLoader;
@@ -104,10 +104,17 @@
     NSString *fullPath = [baseURLString stringByAppendingString:posterURLString];
     cell.movieImageView.image = nil;
     NSURL *posterURL = [NSURL URLWithString:fullPath];
+    
+    cell.movieImageView.alpha = 0;
     [cell.movieImageView setImageWithURL:posterURL];
+    [UIImageView animateWithDuration:1 animations:^{
+        cell.movieImageView.alpha = 1;
+    }];
+
 
     return cell;
 }
+
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.filteredMovies.count;

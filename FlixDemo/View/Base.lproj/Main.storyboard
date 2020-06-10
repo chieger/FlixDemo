@@ -197,6 +197,10 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsZ-zU-q7u">
                                                 <rect key="frame" x="0.0" y="0.0" width="146" height="224"/>
                                                 <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="146" id="xDI-kN-xJj"/>
+                                                    <constraint firstAttribute="height" constant="224" id="zFt-f4-ody"/>
+                                                </constraints>
                                                 <connections>
                                                     <segue destination="OtR-Mg-WmG" kind="presentation" identifier="PresentVideo" id="PFD-GB-cHv"/>
                                                 </connections>
@@ -516,7 +520,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="x0V-ca-Xua"/>
+        <segue reference="2Nv-GN-4VF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
