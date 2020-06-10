@@ -107,7 +107,9 @@
     NSString *fullPath = [baseURLString stringByAppendingString:posterURLString];
     cell.posterImageView.image = nil;
     NSURL *posterURL = [NSURL URLWithString:fullPath];
-    [cell.posterImageView setImageWithURL:posterURL];
+    [UIView animateWithDuration:1 animations:^ {
+        [cell.posterImageView setImageWithURL:posterURL];
+    }];
     
     return cell;
 }
