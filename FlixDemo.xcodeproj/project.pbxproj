@@ -17,6 +17,8 @@
 		26AF82572489D456007060A9 /* MovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF82562489D456007060A9 /* MovieTableViewCell.m */; };
 		26B8887E2488AF8400DF0026 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B8887D2488AF8400DF0026 /* MoviesViewController.m */; };
 		26C2E0EE249073E800B83901 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C2E0ED249073E800B83901 /* DetailsViewController.m */; };
+		26C2E0F12490C89600B83901 /* SuperherosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C2E0F02490C89600B83901 /* SuperherosViewController.m */; };
+		26C2E0F42490C91C00B83901 /* SuperheroCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C2E0F32490C91C00B83901 /* SuperheroCollectionViewCell.m */; };
 		38D3EAD25560C043BFADE8AA /* Pods_FlixDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA217A65C50964D2684F59C /* Pods_FlixDemoTests.framework */; };
 		9A76B9894D8570FCBB2DB8F7 /* Pods_FlixDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136C2C74280EBFA6817E3997 /* Pods_FlixDemo.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,10 @@
 		26B8887D2488AF8400DF0026 /* MoviesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		26C2E0EC249073E800B83901 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		26C2E0ED249073E800B83901 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		26C2E0EF2490C89600B83901 /* SuperherosViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperherosViewController.h; sourceTree = "<group>"; };
+		26C2E0F02490C89600B83901 /* SuperherosViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperherosViewController.m; sourceTree = "<group>"; };
+		26C2E0F22490C91C00B83901 /* SuperheroCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperheroCollectionViewCell.h; sourceTree = "<group>"; };
+		26C2E0F32490C91C00B83901 /* SuperheroCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperheroCollectionViewCell.m; sourceTree = "<group>"; };
 		342777DC047268264A5F3C91 /* Pods-FlixDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlixDemoTests.release.xcconfig"; path = "Target Support Files/Pods-FlixDemoTests/Pods-FlixDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		5BA217A65C50964D2684F59C /* Pods_FlixDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlixDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA155896B8C9F83CF6930D8 /* Pods-FlixDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlixDemo.release.xcconfig"; path = "Target Support Files/Pods-FlixDemo/Pods-FlixDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +156,10 @@
 				26AF82562489D456007060A9 /* MovieTableViewCell.m */,
 				26C2E0EC249073E800B83901 /* DetailsViewController.h */,
 				26C2E0ED249073E800B83901 /* DetailsViewController.m */,
+				26C2E0EF2490C89600B83901 /* SuperherosViewController.h */,
+				26C2E0F02490C89600B83901 /* SuperherosViewController.m */,
+				26C2E0F22490C91C00B83901 /* SuperheroCollectionViewCell.h */,
+				26C2E0F32490C91C00B83901 /* SuperheroCollectionViewCell.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -345,8 +355,10 @@
 				26B8887E2488AF8400DF0026 /* MoviesViewController.m in Sources */,
 				262C8EF02488A44600AB1A25 /* main.m in Sources */,
 				26C2E0EE249073E800B83901 /* DetailsViewController.m in Sources */,
+				26C2E0F42490C91C00B83901 /* SuperheroCollectionViewCell.m in Sources */,
 				26AF82572489D456007060A9 /* MovieTableViewCell.m in Sources */,
 				262C8EE22488A43C00AB1A25 /* SceneDelegate.m in Sources */,
+				26C2E0F12490C89600B83901 /* SuperherosViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
