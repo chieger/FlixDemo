@@ -330,7 +330,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gYQ-UD-xrA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -374,7 +374,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZJT-8b-cyb">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="9tc-gb-QBk">
                                     <size key="itemSize" width="200" height="254"/>
@@ -382,10 +382,10 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="JwA-VT-aN9">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="W0P-K1-6Ra">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="681"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="color" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="color" red="1" green="0.38655015250000002" blue="0.48428048219999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SuperheroCell" id="0Ea-ho-Fau" customClass="SuperheroCollectionViewCell">
@@ -418,11 +418,16 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cSR-tl-tfM">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ZJT-8b-cyb" firstAttribute="trailing" secondItem="Y0H-zc-MLk" secondAttribute="trailing" id="cyF-8J-OHx"/>
-                            <constraint firstItem="ZJT-8b-cyb" firstAttribute="top" secondItem="Y0H-zc-MLk" secondAttribute="top" id="d3b-eG-h1v"/>
+                            <constraint firstItem="ZJT-8b-cyb" firstAttribute="top" secondItem="Y0H-zc-MLk" secondAttribute="top" constant="44" id="d3b-eG-h1v"/>
                             <constraint firstItem="ZJT-8b-cyb" firstAttribute="bottom" secondItem="Y0H-zc-MLk" secondAttribute="bottom" id="fHL-bx-h4b"/>
                             <constraint firstItem="ZJT-8b-cyb" firstAttribute="leading" secondItem="Y0H-zc-MLk" secondAttribute="leading" id="zye-Xh-yWK"/>
                         </constraints>
@@ -430,8 +435,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="SUPERHEROS" id="xLC-uk-gFw"/>
                     <connections>
-                        <outlet property="activityLoader" destination="JwA-VT-aN9" id="kPD-h7-b0p"/>
+                        <outlet property="activityLoader" destination="W0P-K1-6Ra" id="Bcu-c2-l9O"/>
                         <outlet property="collectionView" destination="ZJT-8b-cyb" id="mbn-ea-3Yd"/>
+                        <outlet property="searchBar" destination="cSR-tl-tfM" id="E1O-GQ-H4c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fB2-Cb-Dyv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -447,6 +453,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cwl-m0-hFk">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.38655015250000002" blue="0.48428048219999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

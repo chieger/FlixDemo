@@ -12,11 +12,14 @@
 #import "DetailsViewController.h"
 
 
-@interface SuperherosViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface SuperherosViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property(nonatomic, strong) NSArray *movie;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityLoader;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property(nonatomic, strong) NSArray *movie;
+@property(nonatomic, strong) NSArray *filteredMovies;
 
 @end
 
@@ -28,6 +31,7 @@
     
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
+    self.searchBar.delegate = self;
     
     [self fetchMovies];
     
@@ -60,9 +64,9 @@
                    NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                    
                    self.movie = dataDictionary[@"results"];
+                   self.filteredMovies = self.movie;
                    [self.collectionView reloadData];
                }
-            
             [self.activityLoader stopAnimating];
            }];
         [task resume];
@@ -78,10 +82,8 @@
     UIAlertAction* okButton = [UIAlertAction
                                 actionWithTitle:@"Try Again"
                                 style:UIAlertActionStyleDefault
-                                handler:^(UIAlertAction * action) {
-                                        UIApplication *application = [UIApplication sharedApplication];
-                                    NSURL *URL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-                                    [application openURL:URL options:@{} completionHandler:nil];
+                                handler:^(UIAlertAction * _Nonnull action) {
+        [self fetchMovies];
         
                                 }];
 
@@ -94,7 +96,7 @@
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     SuperheroCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SuperheroCell" forIndexPath:indexPath];
     
-    NSDictionary *movie = self.movie[indexPath.item];
+    NSDictionary *movie = self.filteredMovies[indexPath.item];
     
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = movie[@"poster_path"];
@@ -108,17 +110,46 @@
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.movie.count;
+    return self.filteredMovies.count;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UICollectionViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
     
-    NSDictionary *movie = self.movie[indexPath.item];
+    NSDictionary *movie = self.filteredMovies[indexPath.item];
     
     DetailsViewController * detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    if (searchText.length != 0) {
+        
+        NSString *substring = [NSString stringWithString:searchText];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title contains[c] %@",substring];
+        self.filteredMovies =  [self.movie filteredArrayUsingPredicate:predicate];
+
+        NSLog(@"%@", self.filteredMovies);
+    
+    } else {
+        self.filteredMovies = self.movie;
+    }
+    
+    [self.collectionView reloadData];
+
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.searchBar.showsCancelButton = YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.searchBar.showsCancelButton = NO;
+    self.searchBar.text = @"";
+    [self.searchBar resignFirstResponder];
+    [self.collectionView reloadData];
 }
 
 @end
