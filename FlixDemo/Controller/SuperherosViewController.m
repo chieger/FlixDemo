@@ -9,6 +9,7 @@
 #import "SuperherosViewController.h"
 #import "SuperheroCollectionViewCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "DetailsViewController.h"
 
 
 @interface SuperherosViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
@@ -109,4 +110,15 @@
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.movie.count;
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UICollectionViewCell *tappedCell = sender;
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
+    
+    NSDictionary *movie = self.movie[indexPath.item];
+    
+    DetailsViewController * detailsViewController = [segue destinationViewController];
+    detailsViewController.movie = movie;
+}
+
 @end

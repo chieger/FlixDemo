@@ -413,6 +413,7 @@
                                         <size key="customSize" width="200" height="254"/>
                                         <connections>
                                             <outlet property="movieImageView" destination="sBz-0t-yuN" id="P8J-Zq-QFt"/>
+                                            <segue destination="crG-bu-2Ui" kind="show" identifier="HeroDetails" id="x0V-ca-Xua"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -461,6 +462,9 @@
             <point key="canvasLocation" x="2695.6521739130435" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="x0V-ca-Xua"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
