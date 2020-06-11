@@ -20,8 +20,8 @@ The following **optional** features are implemented:
 - [X] User can search for a movie.
 - [X] All images fade in as they are loading.
 - [X] User can view the large movie poster by tapping on a cell.
-- [ ] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
-- [ ] Customize the selection effect of the cell.
+- [X] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
+- [X] Customize the selection effect of the cell.
 - [X] Customize the navigation bar.
 - [X] Customize the UI.
 
@@ -38,7 +38,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://recordit.co/MBtwX87lWf.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://recordit.co/rMiYuK2Z1K.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with Recordit
 
