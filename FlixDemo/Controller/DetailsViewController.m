@@ -31,10 +31,19 @@
     self.releaseDateLabel.text = self.movie[@"release_date"];
     self.overviewLabel.text = self.movie[@"overview"];
     
-    [self setImageForView:self.movie[@"poster_path"] imageViewPassed:self.posterImageView];
-    
-    [self setImageForView:self.movie[@"backdrop_path"] imageViewPassed:self.backDropImageView];
+    if ([self.movie[@"poster_path"] isKindOfClass:[NSString class]]) {
+        [self setImageForView:self.movie[@"poster_path"] imageViewPassed:self.posterImageView];
+    } else {
+        self.posterImageView.image = nil;
+    }
 
+    
+    if ([self.movie[@"backdrop_path"] isKindOfClass:[NSString class]]) {
+    [self setImageForView:self.movie[@"backdrop_path"] imageViewPassed:self.backDropImageView];
+    } else {
+        self.backDropImageView.image = nil;
+    }
+    
     self.navigationItem.title = [self.movie[@"title"] uppercaseString];
     
 
