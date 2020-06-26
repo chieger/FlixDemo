@@ -1,6 +1,7 @@
 # Project 2 - *Flix*
 
 Ths is a change!!!
+This is a chnage from the remote (i.e. GitHub)
 
 **Flix** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
