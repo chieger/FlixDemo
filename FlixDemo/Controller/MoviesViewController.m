@@ -22,6 +22,7 @@
 
 @implementation MoviesViewController
 // This is a test of rebase in git
+// This is another test
 
 - (void)viewDidLoad {
     [super viewDidLoad];
