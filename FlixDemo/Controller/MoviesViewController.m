@@ -101,15 +101,30 @@
     cell.titleLabel.text = [movie[@"title"] uppercaseString];
     cell.descriptionLabel.text = movie[@"overview"];
     
-    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
+    NSString *highResURLString = @"https://image.tmdb.org/t/p/w500";
+    NSString *lowResURLString = @"https://image.tmdb.org/t/p/w342";
+            
     NSString *posterURLString = movie[@"backdrop_path"];
     
-    NSString *fullPath = [baseURLString stringByAppendingString:posterURLString];
-    cell.posterImageView.image = nil;
-    NSURL *posterURL = [NSURL URLWithString:fullPath];
+    if ([movie[@"backdrop_path"] isKindOfClass:[NSString class]]) {
+
+    //setting low res image
+    NSString *lowResFullPath = [lowResURLString stringByAppendingString:posterURLString];
+    NSURL *posterURL = [NSURL URLWithString:lowResFullPath];
+    cell.posterImageView.alpha = 0;
+    [cell.posterImageView setImageWithURL:posterURL];
+
+    //setting high res image
+    NSString *highResFullPath = [highResURLString stringByAppendingString:posterURLString];
+    NSURL *posterHighResURL = [NSURL URLWithString:highResFullPath];
     [UIView animateWithDuration:1 animations:^ {
-        [cell.posterImageView setImageWithURL:posterURL];
+        cell.posterImageView.alpha = 1;
+        [cell.posterImageView setImageWithURL:posterHighResURL];
     }];
+    
+    } else {
+        cell.posterImageView.image = nil;
+    }
     
     return cell;
 }
