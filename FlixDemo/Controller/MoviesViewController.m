@@ -21,6 +21,8 @@
 @end
 
 @implementation MoviesViewController
+// These are some changes on my feature branch
+
 // This is a test of rebase in git
 // This is another test
 
