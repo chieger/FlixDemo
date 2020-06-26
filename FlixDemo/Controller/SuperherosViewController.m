@@ -35,15 +35,15 @@
     
     [self fetchMovies];
     
-    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
-    
-    layout.minimumLineSpacing = 5;
-    layout.minimumInteritemSpacing = 5;
-    
-    CGFloat postersPerLine = 2;
-    CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (postersPerLine - 1)) / postersPerLine;
-    CGFloat itemHeight = itemWidth * 1.5;
-    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+        UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+
+        layout.minimumLineSpacing = 5;
+        layout.minimumInteritemSpacing = 5;
+
+        CGFloat postersPerLine = 2;
+        CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (postersPerLine - 1)) / postersPerLine;
+        CGFloat itemHeight = itemWidth * 1.5;
+        layout.itemSize = CGSizeMake(itemWidth, itemHeight);
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.activityLoader startAnimating];
@@ -149,7 +149,7 @@
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    self.searchBar.showsCancelButton = YES;
+    self.searchBar.showsCancelButton = NO;
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {

@@ -194,13 +194,15 @@
                                                 <rect key="frame" x="3" y="3" width="156" height="228"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsZ-zU-q7u">
-                                                <rect key="frame" x="0.0" y="0.0" width="146" height="224"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsZ-zU-q7u">
+                                                <rect key="frame" x="0.0" y="0.0" width="159" height="231"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="146" id="xDI-kN-xJj"/>
-                                                    <constraint firstAttribute="height" constant="224" id="zFt-f4-ody"/>
+                                                    <constraint firstAttribute="width" constant="159" id="xDI-kN-xJj"/>
+                                                    <constraint firstAttribute="height" constant="231" id="zFt-f4-ody"/>
                                                 </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="play.circle.fill" catalog="system"/>
                                                 <connections>
                                                     <segue destination="OtR-Mg-WmG" kind="presentation" identifier="PresentVideo" id="PFD-GB-cHv"/>
                                                 </connections>
@@ -213,8 +215,8 @@
                                             <constraint firstAttribute="width" constant="162" id="Crr-vS-kLI"/>
                                             <constraint firstItem="hsZ-zU-q7u" firstAttribute="top" secondItem="SGW-J1-cgu" secondAttribute="top" id="FIZ-Mu-eW1"/>
                                             <constraint firstAttribute="height" constant="234" id="TeT-s8-YaO"/>
-                                            <constraint firstAttribute="bottom" secondItem="hsZ-zU-q7u" secondAttribute="bottom" constant="10" id="Xe8-WQ-JRF"/>
-                                            <constraint firstAttribute="trailing" secondItem="hsZ-zU-q7u" secondAttribute="trailing" constant="16" id="ea4-ib-VfS"/>
+                                            <constraint firstAttribute="bottom" secondItem="hsZ-zU-q7u" secondAttribute="bottom" constant="3" id="Xe8-WQ-JRF"/>
+                                            <constraint firstAttribute="trailing" secondItem="hsZ-zU-q7u" secondAttribute="trailing" constant="3" id="ea4-ib-VfS"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -524,6 +526,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
+        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
 </document>
